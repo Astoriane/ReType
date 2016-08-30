@@ -1,1 +1,2 @@
 # ReType
+Retype is a modular script written in Java by me as my university application reference. And it is to be used by OCD data hoarding freaks by me to keep their files named nicely without renaming them one by one. It is not supposed to be just a mass/batch renamer. It is to be so much more. With features considered from automatic template based renaming for Mp3 files, to downloading episode names for Tv series and Anime from some kind of API yet to be discovered!.

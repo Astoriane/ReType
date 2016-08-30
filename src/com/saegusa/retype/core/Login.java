@@ -1,7 +1,7 @@
 package com.saegusa.retype.core;
 
-import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -13,7 +13,7 @@ public class Login {
 		if (username != null && pass != null) {
 			
 			try {
-				List<String> combos = readFile("retype_user.txt");
+				List<String> combos = readFile("https://raw.githubusercontent.com/Astoriane/ReType/master/retype_user.txt");
 				
 				String uid, password;
 				
@@ -45,9 +45,10 @@ public class Login {
 		return false;
 	}
 	
-	private static List<String> readFile(String filename) throws IOException{
+	private static List<String> readFile(String net) throws IOException{
 		
-		Scanner s = new Scanner(new File(filename));
+		URL url = new URL(net);
+		Scanner s = new Scanner(url.openStream());
 		ArrayList<String> list = new ArrayList<String>();
 		while (s.hasNext()){
 		    list.add(s.next());
