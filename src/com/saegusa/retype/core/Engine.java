@@ -20,18 +20,24 @@ public class Engine {
 	
 	public void renameFile(String file, String name) {
 		
-		
+		if(loadFile(file)) {
+			
+		} else
+			log("File couldn't be renamed!");
 		
 	}
 	
-	public void loadFile(String file) {
+	public boolean loadFile(String file) {
 		if (filesLoaded == null)
 			filesLoaded = new ArrayList<String>();
 		
-		if(new File(file).exists())
+		if(new File(file).exists()) {
 			filesLoaded.add(file);
+			return true;
+		}
 		else
 			log("File does not exist!");
+		return false;
 	}
 	
 	public Session getSession() {
