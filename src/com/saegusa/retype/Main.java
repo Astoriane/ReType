@@ -5,6 +5,7 @@ import java.util.Scanner;
 import com.saegusa.retype.core.Engine;
 import com.saegusa.retype.core.Login;
 import com.saegusa.retype.core.Session;
+import com.saegusa.retype.handler.LocalizationHandler;
 
 public class Main {
 	
@@ -16,6 +17,9 @@ public class Main {
 	public static void main(String[] args) {
 		
 		retype = new Engine(session);
+		
+		LocalizationHandler locales = new LocalizationHandler();
+		locales.init();
 		
 		if (secure) {
 			userCreds();
